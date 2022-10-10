@@ -8,13 +8,21 @@ import { InfoPersonajePageRoutingModule } from './info-personaje-routing.module'
 
 import { InfoPersonajePage } from './info-personaje.page';
 
+
+import {RickapiService} from './../../servicios/rickapi.service';
+import {HttpClientModule} from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InfoPersonajePageRoutingModule
+    InfoPersonajePageRoutingModule,
+    RouterModule,
+    HttpClientModule,
   ],
-  declarations: [InfoPersonajePage]
+  declarations: [InfoPersonajePage],
+  providers:[RickapiService//requiere HttpClient
+]
 })
 export class InfoPersonajePageModule {}

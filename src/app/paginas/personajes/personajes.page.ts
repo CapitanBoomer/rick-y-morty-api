@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import {RickapiService} from './../../servicios/rickapi.service'
-import {ListaPesonaje, personajeparcial} from './modelo/lista-pesonaje'
+import {HttpClient} from '@angular/common/http';
 @Component({
   selector: 'app-personajes',
   templateUrl: './personajes.page.html',
   styleUrls: ['./personajes.page.scss'],
 })
 export class PersonajesPage implements OnInit {
-public personajes:Array<personajeparcial> = [];
+  public characters = [];
   constructor(
-    private apiRick: RickapiService
+    private http:HttpClient
   ) { }
 
   ngOnInit() {
-    this.apiRick.obtenerPrimerosPersonaje().subscribe (losDatos =>{this.personajes = losDatos.results});
+    console.log('aqui esta todo')
+    this.http.get<any>('https://rickandmortyapi.com/api/character').subscribe(res => {this.characters = res.results})
 
   }
 

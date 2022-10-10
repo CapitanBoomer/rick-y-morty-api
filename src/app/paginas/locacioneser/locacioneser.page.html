@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>locacioneser</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let datos of lugares" [routerLink]="['',datos.id]">
+    <ion-card-title>{{datos.name}}</ion-card-title>
+    {{datos.dimension}}
+
+
+  </ion-card>
+</ion-content>
