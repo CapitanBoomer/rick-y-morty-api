@@ -17,7 +17,7 @@ const routes: Routes = [
     loadChildren: () => import('./paginas/personajes/personajes.module').then(m => m.PersonajesPageModule)
   },
   {
-    path: 'info-personaje/:id',
+    path: 'info/:id',
     loadChildren: () => import('./paginas/info-personaje/info-personaje.module').then(m => m.InfoPersonajePageModule)
   },
   {

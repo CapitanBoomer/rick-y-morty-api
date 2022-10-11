@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-personajes',
   templateUrl: './personajes.page.html',
@@ -8,13 +8,12 @@ import {HttpClient} from '@angular/common/http';
 export class PersonajesPage implements OnInit {
   public characters = [];
   constructor(
-    private http:HttpClient
+    private http: HttpClient
   ) { }
 
   ngOnInit() {
     console.log('aqui esta todo')
-    this.http.get<any>('https://rickandmortyapi.com/api/character').subscribe(res => {this.characters = res.results})
-
+    this.http.get<any>('https://rickandmortyapi.com/api/character/').subscribe(res => {this.characters = res.results})
   }
 
 }

@@ -4,18 +4,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col sizeMd="4" offsetmd="4">
-        <ion-list>
-          <ion-item *ngFor="let characters of characters" [routerLink]="['/info-personaje/' + characters.id ]">
-            <ion-avatar slot="start"> <img [src]="characters.image" height="auto" width="auto"></ion-avatar>
-            <ion-card-title>{{characters.name}}</ion-card-title>
+<ion-content >
+
+          <ion-item *ngFor="let res of characters" [routerLink]="['/info/' + res.id]">
+            <ion-avatar><img [src]="[res.image]" alt=""></ion-avatar>
+            <ion-card-title>{{res.name}}</ion-card-title>
 
           </ion-item>
-        </ion-list>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+
 </ion-content>

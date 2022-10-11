@@ -11,6 +11,7 @@ import { RickapiService } from './../../servicios/rickapi.service'
 export class InfoPersonajePage implements OnInit {
   personajeId: string;
   character;
+  episodios;
   constructor(
     private activaedRoute: ActivatedRoute,
     private http: HttpClient,) { }
@@ -19,7 +20,7 @@ export class InfoPersonajePage implements OnInit {
     console.log(
       this.personajeId = this.activaedRoute.snapshot.paramMap.get('id'));
       this.http.get('https://rickandmortyapi.com/api/character/' + this.personajeId).subscribe(res =>{this.character = res})
-
+      this.http.get('https://rickandmortyapi.com/api/episode/' + this.personajeId).subscribe(res =>{this.episodios = res})
 
 
   };
